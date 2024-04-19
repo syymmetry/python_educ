@@ -1,52 +1,76 @@
-import tkinter as tk
+def main():
+    while True:
+        print("Добро пожаловать!")
+        print("Пожалуйста, выбирете операцию:")
+        print("1. Стандартный калькулятор")
+        print("2. Инженерный калькулятор")
+        print("3. Таблица умножения")
+        print("4. Калькулятор дробей")
+        print("5. ВЫход из программы")
 
-def multiplicationTable(number):
+        choice = input("Ваш выбор: ")
 
-    number = int(input("Введите число: "))
-
-    for i in range(1, 11):
-        result_match = number * 1
-        print(f"{number} * {i} = {result_match}")
-
-
+        if choice == '1':
+            calculator()
+        elif choice == '3':
+            number = int(input("Введите число для таблицы умножения: "))
+            print(f"Таблица умножения для числа {number}:")
+            multiplicationTable(number)
+            print("Выйти в меню (m), выйти из программы (e)")
+            menu_end = input(" m/e: ")
+            if (menu_end == "m"):
+                continue
+            elif (menu_end == "e"):
+                break 
+        elif choice == '5':
+            print("Выход из программы")
+            break
+        else:
+            print("Неверная операция")
 
 def calculator():
-
     while True:
-        operation = input("Ведите операцию: (+, -, *, /): ")
+        operation = input("Введите операцию (+, -, *, /): ")
 
-         if operation not in ['+', '-'. '*', '/']:
-             print("Неверно введена операция!")
-             continue
+        if operation not in ['+', '-', '*', '/']:
+            print("Неверная операция")
+            continue
 
+        try:
+            num1 = float(input("Введите первое число: "))
+            num2 = float(input("Введите второе число: "))
+        except ValueError:
+            print("Ошибка ввода!ПОжалуйста, введите числовое значение!")
+            continue
 
-         num1 = float(input("Введите первое число: "))
-         num2 = float(input("Введите второе число: "))
+        if operation == '+':
+            result = num1 + num2
+        elif operation == '-':
+            result = num1 - num2
+        elif operation == '*':
+            result = num1 * num2
+        elif operation == '/':
+            if num2 == 0:
+                print("Деление на ноль невозможно!")
+                continue
+            else:
+                result = num1 / num2
+        print(f"Результат: {result}")
 
+        choice = input("Выполнить ещё одну операцию? (y/n): ").lower()
+        if choice != 'y':
+            break
 
-         if operation == '+':
-             result = num1 + num2
-
-         elif operation == '-':
-             result = num1 - num2
-
-         elif operation == '*':
-             result = num1 * num2
-
-         elif operation == '/':
-             if num1 != 0:
-                 result = result = num1 / num2
-             elif num2 != 0:
-                 result = num1 / num2
-             else:
-                 print("Деление на ноль невозможно!")
-
-         print(result)
-
-         choice = input("Хотите выполнять ещё одну операцию? (y/n): "):
-             if choice.lower() != y:
-                 break
+def multiplicationTable(number):
     
+    for i in range(1, 11):
+        result = number * i 
+        print(f"{number} * {i} = {result}")
+
+
+'''def ingeneer_calc():'''
 
 
 
+if __name__ == "__main__":
+    main()
