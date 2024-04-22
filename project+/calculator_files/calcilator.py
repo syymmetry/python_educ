@@ -1,3 +1,5 @@
+import math
+
 def main():
     while True:
         print("Добро пожаловать!")
@@ -68,7 +70,24 @@ def multiplicationTable(number):
         print(f"{number} * {i} = {result}")
 
 
-'''def ingeneer_calc():'''
+def sin(x):
+    result = 0
+
+    for n in range(10):
+        result += ((-1) ** n) * (x ** (2 * n + 1)) / factorial(2 * n)
+
+    return result
+
+
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+
+def ingeneer_calc():    
 
 
 

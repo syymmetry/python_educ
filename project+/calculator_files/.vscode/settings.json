@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.py": "python"
+    },
+    "python.linting.ignore": [
+        "E0001"
+    ],
+    "python.REPL.enableREPLSmartSend": false
+}
