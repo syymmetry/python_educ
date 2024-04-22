@@ -14,6 +14,8 @@ def main():
 
         if choice == '1':
             calculator()
+        elif choice == '2':
+            ingeneer_calc()
         elif choice == '3':
             number = int(input("Введите число для таблицы умножения: "))
             print(f"Таблица умножения для числа {number}:")
@@ -71,13 +73,26 @@ def multiplicationTable(number):
 
 
 def sin(x):
+    x_rad = math.radians(x)
     result = 0
-
     for n in range(10):
-        result += ((-1) ** n) * (x ** (2 * n + 1)) / factorial(2 * n)
-
+        result += ((-1) ** n) * (x_rad ** (2 * n + 1)) / factorial(2 * n + 1)
     return result
 
+def cos(x):
+    x_rad = math.radians(x)
+    result = 0
+    for n in range(10):
+        result += ((-1) ** n) * (x_rad ** (2 * n)) / factorial(2 * n)
+    return result
+
+def tan(x):
+    x_rad = math.radians(x)
+    return sin(x_rad) / cos(x_rad)
+
+def ctg(x):
+    x_rad = math.radians(x)
+    return cos(x_rad) / sin(x_rad)
 
 
 def factorial(n):
@@ -87,8 +102,38 @@ def factorial(n):
         return n * factorial(n - 1)
 
 
-def ingeneer_calc():    
+def ingeneer_calc():
+    while True:
+        print("Введите операцию: ")
+        print("1. Sin")   
+        print("2. Cos")   
+        print("3. Tan")
+        print("4. Ctg")
+        print("5. Назад")
 
+        choice = input("Ваш выбор: ")
+
+        if choice == '1':
+            calculate_trig_function(sin, "sin")
+        elif choice == '2':
+            calculate_trig_function(cos, "cos")
+        elif choice == '3':
+            calculate_trig_function(tan, "tan")
+        elif choice == '4':
+            calculate_trig_function(ctg, "ctg")
+        elif choice == '5':
+            print("Возврат к предыдущему меню...")
+            break
+        else:
+            print("Неверная операция!")
+
+def calculate_trig_function(func, func_name):
+    try:
+        angle = float(input(f"Введите угол в градусах для функции {func_name}: "))
+        result = func(angle)
+        print(f"{func_name}({angle} градусов) = {result}")
+    except ValueError:
+        print("Ошибка ввода! Пожалуйста, введите числовое значние!")
 
 
 if __name__ == "__main__":
