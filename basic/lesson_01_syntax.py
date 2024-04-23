@@ -130,10 +130,57 @@ X: 5, Y: 6
 
 #4.Комбинация с условиями
 number = [25, 24, 12, 31, 44]
-print(f"В массиве {number} список чётных/нечёных чисел:")
+print(f"В списке {number} чётных/нечёных чисел:")
 
 for num in number:
     if num % 2 == 0:
         print(f"Чётное число: {num}")
     else:
         print(f"Число нечётное: {num}")
+
+
+#5.Использование enumerate: Использование enumerate для получения индексов элементов списка
+#Функция enumerate позволяет получить индекс каждого элемента вместе с его значением в цикле for
+fruits = ['apple', 'banana', 'cherry']
+
+for index, fruit in enumerate(fruits):
+    print(f"Index: {index}, Fruits: {fruits}")
+
+#6.Итерация по строке и подсчет символов
+sentence = "fox jumps over the lazy dog"
+char_count = {}
+
+for char in sentence:
+    if char.isalpha(): # Фильтрация только буквенных символов
+        char_count[char.lower()] = char_count.get(char.lower(), 0) + 1
+
+print(char_count)        
+
+#7.Поиск простых чисел в диапазоне
+primes = []
+
+for num in range(1, 101):
+    is_prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        primes.append(num)
+
+print(primes)
+
+
+#9. Список или массив
+''' Функция enumerate позволяет получить индекс каждого элемента
+ вместе с его значением в цикле for.'''
+
+my_list = [10, 20, 30, 40, 50]
+
+print(my_list[0]) # Выводит первый элемент списка (10)
+print(my_list[2]) # Выводит третий элемент списка (30)
+print(my_list[-1]) # Выводит последний элемент списка (50)
+'''
+
+
+'''
