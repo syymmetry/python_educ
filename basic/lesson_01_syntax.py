@@ -184,3 +184,17 @@ print(my_list[-1]) # Выводит последний элемент списк
 
 
 '''
+
+
+
+a = range(1, 10**3, 2)
+print(a[5])
+
+#или так
+
+a = range(1, 10**3, 2)
+for index, value in enumerate(a):
+    print("Индекс: ", index,"Число: ", value)
+
+
+
