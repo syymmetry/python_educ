@@ -1,15 +1,6 @@
 ''' Reference Model of Data '''
 
 
-
-
-
-
-
-
-
-
-
 '''  cascading assignment,  multiple purpose'''
 
 x = z = y = 0
@@ -102,8 +93,8 @@ for i in range(1, 6):
 
 #1.Преобразование списка чисел в список их квадратов
 numbers = [10, 25, 32, 64]
-
 squared_numbers = []
+
 for num in numbers:
     squared_numbers.append(num ** 2)
 
@@ -197,4 +188,11 @@ for index, value in enumerate(a):
     print("Индекс: ", index,"Число: ", value)
 
 
+#list
 
+a = list(range(10))
+b = a
+print("Имена a и b - это ", "Один и тот же объект" if a is b else "Разные объекты")
+print(*a, sep= '\t')
+b[1] = 100
+print(*a, sep= '\t')

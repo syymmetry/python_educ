@@ -104,14 +104,8 @@ def factorial(n):
 
 def ingeneer_calc():
     while True:
-        print("Введите операцию: ")
-        print("1. Sin")   
-        print("2. Cos")   
-        print("3. Tan")
-        print("4. Ctg")
-        print("5. Назад")
-
-        choice = input("Ваш выбор: ")
+        print_menu()
+        choice = get_user_choice()
 
         if choice == '1':
             calculate_trig_function(sin, "sin")
@@ -124,6 +118,22 @@ def ingeneer_calc():
         elif choice == '5':
             print("Возврат к предыдущему меню...")
             break
+        else:
+            print("Неверная операция!")
+
+def print_menu():
+    print("Введите операцию: ")
+    print("1. Sin")
+    print("2. Cos")
+    print("3. Tan")
+    print("4. Ctg")
+    print("5. Назад")
+
+def get_user_choice():
+    while True:
+        choice = input("Ваш выбор: ")
+        if choice in ['1', '2', '3', '4', '5']:
+            return choice
         else:
             print("Неверная операция!")
 
