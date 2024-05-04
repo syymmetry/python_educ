@@ -6,7 +6,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Инициализация бота
-bot = telebot.TeleBot('6878930455:AAEbqFls6xcLwbP47vAPiwl1JRYPgC1lvlw')
+bot = telebot.TeleBot('token')
 
 # Словарь с ссылками на ресурсы
 resource_links = {
