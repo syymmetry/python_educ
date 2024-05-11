@@ -107,9 +107,6 @@ sum_num(4, 6)
 
 #2.Поиск максимального числа: Напишите функцию, которая принимает список чисел и возвращает наибольшее из них.
 
-def search_biggerNum(list):
-     big = 
-
 
 
 
@@ -134,3 +131,36 @@ def sort_words_by_length(sentence):
 input_sentence = "Это пример предложения для сортировки слов по их длине"
 sorted_words = sort_words_by_length(input_sentence)
 print(sorted_words)
+
+#Дополнительная задача
+a = int(input())
+for num in range(1, 10):
+    if a < 5: # 1, 2, 3, 4
+        print(1)
+        break
+    elif a < 9 and num > 4: # 5, 6, 7, 8
+        print(2)
+        break
+    elif a < 13 and a > 8: # 9, 10, 11, 12
+        print(3)
+        break
+    elif a < 17 and a > 13: # 13, 14, 15, 16
+        print(4)
+        break
+    elif a < 21 and a > 16: # 17, 18, 19, 20
+        print(5)
+        break
+    elif a < 25 and a > 20: # 21, 22, 23, 24
+        print(6)
+        break
+    elif a < 29 and a > 24: # 25, 26, 27, 28
+        print(7)
+        break
+    elif a < 33 and a > 28: # 29, 30, 31, 32
+        print(8)
+        break
+    elif a < 37 and a > 32:
+        print(9)
+        break
+    else:
+        print("error")
